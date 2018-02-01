@@ -290,6 +290,24 @@ footer a:link, footer a:visited {
 	overflow: visible;
 	background: url("https://cdn.dribbble.com/users/89889/screenshots/3111879/wetransfer-dribbble.jpg");
 }
+div.extra1 {
+	display: none;
+}
+div.extra2 {
+	display: none;
+}
+div.extra3 {
+	display: none;
+}
+div.extra4 {
+	display: none;
+}
+div.extra5 {
+	display: none;
+}
+div.extra6 {
+	display: none;
+}
 
 
 
