@@ -7,6 +7,11 @@
 
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
 
 font-family: 'Roboto Mono', monospace;
 font-family: 'Karla', sans-serif;
@@ -22,17 +27,17 @@ html {
 	animation: Gradient 15s ease infinite;
 	margin: 0px;
 	padding: 0px;
-	}
+}
 body { 
 	line-height: 1.88889;
-	color: #555753;
-	background: white;
+	color: #000;
+	background: red;
 	margin: 20px; 
 	padding: 0px;
 	display: grid;
 	grid-template-columns: auto 960px auto;
 	grid-template-areas: ". page-wrapper .";
-	}
+}
 
 /* Gradient Keyframes for HTML Background */
 @-webkit-keyframes Gradient {
@@ -118,11 +123,6 @@ abbr {
 	grid-area: page-wrapper;
 	}
 
-.intro { 
-	min-width: 470px;
-	width: 100%;
-	}
-
 /*
 header h1 { 
 	margin-top: 10px;
@@ -153,12 +153,6 @@ header {
 	padding-top: 20px;
 	height: 87px;
 }
-
-
-.preamble {
-	clear: right; 
-	padding: 0px 10px 0 10px;
-	}
 .supporting {	
 	padding-left: 10px; 
 	margin-bottom: 40px;
@@ -171,12 +165,15 @@ footer a:link, footer a:visited {
 	margin-right: 20px; 
 	}
 
+/*
 .sidebar {
 	margin-left: 600px; 
 	position: absolute; 
 	top: 0; 
 	right: 0;
 	}
+*/
+/*
 .sidebar .wrapper { 
 	font: 10px verdana, sans-serif; 
 	background: transparent url(http://csszengarden.com/001/paper-bg.jpg) top left repeat-y; 
@@ -214,6 +211,7 @@ footer a:link, footer a:visited {
 	white-space: nowrap;
 	overflow: hidden;
 	}
+*/
 
 
 .sidebar ul {
@@ -235,16 +233,6 @@ footer a:link, footer a:visited {
 	color: #B3AE94;
 	}
 
-
-.extra1 {
-	background: transparent url(http://csszengarden.com/001/cr2.gif) top left no-repeat; 
-	position: absolute; 
-	top: 40px; 
-	right: 0; 
-	width: 148px; 
-	height: 110px;
-	}
-
 .page-wrapper {
 	max-width: 960px;
 }
@@ -253,15 +241,17 @@ footer a:link, footer a:visited {
 	display: grid;
 	height: 100%;
 	grid-template-columns: 25% 25% 25% 25%;
-	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-rows: 200px 600px 400px;
 	grid-template-areas: 
 		"title title title demonstration"
 		"image image image ."
-		". . enlightenment-one enlightenment-two"
+		". . enlightenment-one enlightenment-two";
+	padding-top: 40px;
 }
 
 #zen-intro > header {
 	grid-area: title;
+	padding-top: 0px;
 }
 #zen-intro > header > h1 {
 	font-family: 'Roboto Mono', monospace;
@@ -280,12 +270,25 @@ footer a:link, footer a:visited {
 	margin: 0px;
 	padding: 0px;
 	color: black;
+	width: 70%;
 }
 #zen-summary {
 	grid-area: demonstration;
+	padding-top: 40px;;
 }
-#preamble {
+#zen-preamble {
 	grid-area: enlightenment-one;
+}
+#zen-preamble > h3 {
+}
+
+#zen-intro > header::after {
+	content: "";
+	display: block;
+	height: 600px;
+	width 100%;
+	overflow: visible;
+	background: url("https://cdn.dribbble.com/users/89889/screenshots/3111879/wetransfer-dribbble.jpg");
 }
 
 
