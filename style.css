@@ -250,7 +250,7 @@ footer a:link, footer a:visited {
 	grid-template-areas: 
 		"title title title demonstration"
 		"image image image ."
-		". . enlightenment-one enlightenment-two";
+		". . enlightenment-one enlightenment-one";
 	padding-top: 40px;
 	padding-bottom: 100px;
 }
@@ -284,9 +284,18 @@ footer a:link, footer a:visited {
 }
 #zen-preamble {
 	grid-area: enlightenment-one;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 100px auto;
+	grid-template-areas: 
+		"heading heading"
+		"text-left text-right"
+		"text-left text-right";
+	justify-items: stretch;
 }
 #zen-preamble > h3 {
 	margin-top: 0px;
+	grid-area: heading;
 }
 
 #zen-intro > header::after {
@@ -297,6 +306,16 @@ footer a:link, footer a:visited {
 	overflow: visible;
 	background: url("https://cdn.dribbble.com/users/89889/screenshots/3111879/wetransfer-dribbble.jpg");
 }
+
+#zen-preamble > p:last-of-type {
+	grid-area: text-right;
+}
+#zen-preamble > p {
+	grid-area: text-left;
+}
+
+
+
 .extra1 {
 	display: none;
 }
