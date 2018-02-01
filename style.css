@@ -8,6 +8,11 @@
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 
 
+font-family: 'Roboto Mono', monospace;
+font-family: 'Karla', sans-serif;
+font-family: 'PT Serif', serif;
+
+
 /* basic elements */
 html {
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
@@ -19,12 +24,14 @@ html {
 	padding: 0px;
 	}
 body { 
-	font: 75% georgia, sans-serif;
 	line-height: 1.88889;
 	color: #555753;
 	background: white;
 	margin: 20px; 
 	padding: 0px;
+	display: grid;
+	grid-template-columns: auto 960px auto;
+	grid-template-areas: ". page-wrapper .";
 	}
 
 /* Gradient Keyframes for HTML Background */
@@ -67,17 +74,25 @@ body {
 p { 
 	margin-top: 0; 
 	text-align: justify;
+	font-family: 'karla', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 18px;
 	}
 h3 { 
-	font: italic normal 1.4em georgia, sans-serif;
+	font-family: 'PT Serif', sans-serif;
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 44px;
 	letter-spacing: 1px; 
 	margin-bottom: 0; 
-	color: #7D775C;
+	color: #302D2F;
 	}
 a:link { 
-	font-weight: bold; 
+	font-family: 'Roboto Mono', monospace;
+	font-weight: 400;
 	text-decoration: none; 
-	color: #B7A5DF;
+	color: #34A4F6;
 	}
 a:visited { 
 	font-weight: bold; 
@@ -89,16 +104,18 @@ a:hover, a:focus, a:active {
 	color: #9685BA;
 	}
 abbr {
-	border-bottom: none;
+	border-bottom: none !important;
+    cursor: inherit !important;
+    text-decoration: none !important;
 	}
 
 
 /* specific divs */
 .page-wrapper { 
-	background: none; 
-	padding: 0 175px 0 110px;  
+	background: none;
 	margin: 0; 
 	position: relative;
+	grid-area: page-wrapper;
 	}
 
 .intro { 
@@ -106,8 +123,8 @@ abbr {
 	width: 100%;
 	}
 
+/*
 header h1 { 
-	background: transparent url(http://csszengarden.com/001/h1.gif) no-repeat top left;
 	margin-top: 10px;
 	display: block;
 	width: 219px;
@@ -118,8 +135,9 @@ header h1 {
 	white-space: nowrap;
 	overflow: hidden;
 	}
+*/
+/*
 header h2 { 
-	background: transparent url(http://csszengarden.com/001/h2.gif) no-repeat top left; 
 	margin-top: 58px; 
 	margin-bottom: 40px; 
 	width: 200px; 
@@ -130,21 +148,12 @@ header h2 {
 	white-space: nowrap;
 	overflow: hidden;
 	}
+*/
 header {
 	padding-top: 20px;
 	height: 87px;
 }
 
-.summary {
-	clear: both; 
-	margin: 20px 20px 20px 10px; 
-	width: 160px; 
-	float: left;
-	}
-.summary p {
-	font: italic 1.1em/2.2 georgia; 
-	text-align: center;
-	}
 
 .preamble {
 	clear: right; 
@@ -235,3 +244,52 @@ footer a:link, footer a:visited {
 	width: 148px; 
 	height: 110px;
 	}
+
+.page-wrapper {
+	max-width: 960px;
+}
+
+#zen-intro {
+	display: grid;
+	height: 100%;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas: 
+		"title title title demonstration"
+		"image image image ."
+		". . enlightenment-one enlightenment-two"
+}
+
+#zen-intro > header {
+	grid-area: title;
+}
+#zen-intro > header > h1 {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 32px;
+	margin: 0px;
+	padding: 0px;
+	color: black;
+}
+#zen-intro > header > h2 {
+	font-family: 'PT Serif', serif;
+	font-size: 64px;
+	font-weight: 700;
+	line-height: 71px;
+	margin: 0px;
+	padding: 0px;
+	color: black;
+}
+#zen-summary {
+	grid-area: demonstration;
+}
+#preamble {
+	grid-area: enlightenment-one;
+}
+
+
+
+
+
+
