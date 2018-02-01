@@ -17,28 +17,6 @@ font-family: 'Roboto Mono', monospace;
 font-family: 'Karla', sans-serif;
 font-family: 'PT Serif', serif;
 
-
-/* basic elements */
-html {
-	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
-	margin: 0px;
-	padding: 0px;
-}
-body { 
-	line-height: 1.88889;
-	color: #000;
-	background: red;
-	margin: 20px; 
-	padding: 0px;
-	display: grid;
-	grid-template-columns: auto 960px auto;
-	grid-template-areas: ". page-wrapper .";
-}
-
 /* Gradient Keyframes for HTML Background */
 @-webkit-keyframes Gradient {
 	0% {
@@ -76,9 +54,34 @@ body {
 	}
 }
 
+/* basic elements */
+html {
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	-webkit-animation: Gradient 15s ease infinite;
+	-moz-animation: Gradient 15s ease infinite;
+	animation: Gradient 15s ease infinite;
+	margin: 0px;
+	padding: 0px;
+}
+
+body { 
+	position: relative;
+	top: 0;
+	color: #000;
+	background: white;
+	margin: 20px; 
+	padding: 0px;
+	padding-top: 60px;
+	display: grid;
+	grid-template-columns: auto 960px auto;
+	grid-template-areas: ". page-wrapper .";
+	border-top: 4px solid black;
+}
+
 p { 
-	margin-top: 0; 
-	text-align: justify;
+	margin-top: 10px; 
+	text-align: left;
 	font-family: 'karla', sans-serif;
 	font-weight: 400;
 	font-size: 14px;
@@ -90,14 +93,15 @@ h3 {
 	font-size: 36px;
 	line-height: 44px;
 	letter-spacing: 1px; 
-	margin-bottom: 0; 
+	margin-bottom: 20px;
+	margin-top: 30px;
 	color: #302D2F;
 	}
 a:link { 
 	font-family: 'Roboto Mono', monospace;
 	font-weight: 400;
 	text-decoration: none; 
-	color: #34A4F6;
+	color: #EF6767;
 	}
 a:visited { 
 	font-weight: bold; 
@@ -119,7 +123,7 @@ abbr {
 .page-wrapper { 
 	background: none;
 	margin: 0; 
-	position: relative;
+/*	position: relative;*/
 	grid-area: page-wrapper;
 	}
 
@@ -151,7 +155,6 @@ header h2 {
 */
 header {
 	padding-top: 20px;
-	height: 87px;
 }
 .supporting {	
 	padding-left: 10px; 
@@ -218,6 +221,7 @@ footer a:link, footer a:visited {
 	margin: 0;
 	padding: 0;
 	}
+/*
 .sidebar li {
 	line-height: 1.3em; 
 	background: transparent url(http://csszengarden.com/001/cr1.gif) no-repeat top center; 
@@ -232,6 +236,7 @@ footer a:link, footer a:visited {
 .sidebar li a:visited {
 	color: #B3AE94;
 	}
+*/
 
 .page-wrapper {
 	max-width: 960px;
@@ -241,12 +246,13 @@ footer a:link, footer a:visited {
 	display: grid;
 	height: 100%;
 	grid-template-columns: 25% 25% 25% 25%;
-	grid-template-rows: 200px 600px 400px;
+	grid-template-rows: 200px 500px 400px;
 	grid-template-areas: 
 		"title title title demonstration"
 		"image image image ."
 		". . enlightenment-one enlightenment-two";
 	padding-top: 40px;
+	padding-bottom: 100px;
 }
 
 #zen-intro > header {
@@ -280,6 +286,7 @@ footer a:link, footer a:visited {
 	grid-area: enlightenment-one;
 }
 #zen-preamble > h3 {
+	margin-top: 0px;
 }
 
 #zen-intro > header::after {
@@ -290,22 +297,22 @@ footer a:link, footer a:visited {
 	overflow: visible;
 	background: url("https://cdn.dribbble.com/users/89889/screenshots/3111879/wetransfer-dribbble.jpg");
 }
-div.extra1 {
+.extra1 {
 	display: none;
 }
-div.extra2 {
+.extra2 {
 	display: none;
 }
-div.extra3 {
+.extra3 {
 	display: none;
 }
-div.extra4 {
+.extra4 {
 	display: none;
 }
-div.extra5 {
+.extra5 {
 	display: none;
 }
-div.extra6 {
+.extra6 {
 	display: none;
 }
 
