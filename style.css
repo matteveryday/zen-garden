@@ -12,10 +12,14 @@
 	padding: 0px;
 }
 
+:root {
+	--main-padding: calc(((100% - 1000px)/2) - 30px);
+}
 
 font-family: 'Roboto Mono', monospace;
 font-family: 'Karla', sans-serif;
 font-family: 'PT Serif', serif;
+
 
 /* Gradient Keyframes for HTML Background */
 @-webkit-keyframes Gradient {
@@ -65,7 +69,7 @@ html {
 	padding: 0px;
 }
 
-body { 
+body {
 	position: relative;
 	top: 0;
 	color: #000;
@@ -73,14 +77,249 @@ body {
 	margin: 20px; 
 	padding: 0px;
 	padding-top: 60px;
+/*
 	display: grid;
-	grid-template-columns: auto 960px auto;
-	grid-template-areas: ". page-wrapper .";
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: "intro middle details footer";
+*/
 	border-top: 5px solid black;
 	border-radius: 2px 2px 0px 0px;
-	overflow-x: hidden;
-	padding: 20px;
+	padding: 0px;
 }
+
+
+/* TOP SECTION STYLING */
+/* TOP SECTION STYLING */
+/* TOP SECTION STYLING */
+
+section#zen-intro {
+	grid-area: intro;
+	display: grid;
+	height: 100%;
+	margin: 0px 15%;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 200px 500px 400px;
+	grid-template-areas: 
+		"title title title demonstration"
+		"image image image ."
+		". . enlightenment-one enlightenment-one";
+	padding-top: 40px;
+	padding-bottom: 100px;
+}
+
+#zen-intro > header {
+	grid-area: title;
+	padding-top: 0px;
+}
+#zen-intro > header > h1 {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 32px;
+	margin: 0px;
+	padding: 0px;
+	color: black;
+}
+#zen-intro > header > h2 {
+	font-family: 'PT Serif', serif;
+	font-size: 64px;
+	font-weight: 700;
+	line-height: 71px;
+	margin: 0px;
+	padding: 0px;
+	color: black;
+	width: 70%;
+}
+#zen-summary {
+	grid-area: demonstration;
+	padding-top: 40px;
+}
+#zen-preamble {
+	grid-area: enlightenment-one;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 100px auto;
+	grid-column-gap: 20px;
+	grid-template-areas: 
+		"heading heading"
+		"text-left text-right"
+		"text-left text-right";
+	justify-items: stretch;
+}
+#zen-preamble > h3 {
+	margin-top: 0px;
+	grid-area: heading;
+}
+
+#zen-intro > header::after {
+	content: "";
+	display: block;
+	height: 600px;
+	width 100%;
+	overflow: visible;
+	background: url("https://cdn.dribbble.com/users/89889/screenshots/3111879/wetransfer-dribbble.jpg");
+}
+
+#zen-preamble > p {
+	grid-area: text-left;
+}
+#zen-preamble > p:nth-of-type(2) {
+	display: none;
+}
+#zen-preamble > p::after {
+	content: "We must clear the mind of the past. Web enlightenment has been achieved thanks to the tireless efforts of folk like the W3C, WaSP, and the major browser creators.";
+	display: block;
+	padding-top: 10px;
+}
+#zen-preamble > p:last-of-type {
+	grid-area: text-right;
+}
+#zen-preamble > p:last-of-type:after {
+	display: none;
+}
+
+/* SECTION MIDDLE */
+/* SECTION MIDDLE */
+/* SECTION MIDDLE */
+
+#zen-supporting {	
+	width: 100%;
+	position: relative;
+}
+
+#zen-explanation {
+	padding: 300px 15% 240px 15%;
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	grid-template-areas: "heading text-right";
+	background-color: #0D0022;
+	color: white;
+}
+#zen-explanation > h3 {
+	grid-area: heading;
+	margin-top: 0px;
+	color: white;
+/*	border: 3px solid blue;*/
+	z-index: 2;
+	width: 300px;
+}
+#zen-explanation::after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -30px;
+	height: 450px;
+	width: 260px;
+	left: var(--main-padding);
+	border: 3px solid blue;
+}
+#zen-explanation > p {
+	grid-area: text-right;
+	margin-top: 20px;
+}
+#zen-explanation > p:nth-of-type(2) {
+	display: none;
+}
+#zen-explanation > p::after {
+	padding-top: 10px;
+	display: block;
+	content: "CSS allows complete and total control over the style of a hypertext document. The only way this can be illustrated in a way that gets people excited is by demonstrating what it can truly be, once the reins are placed in the hands of those able to create beauty from structure. Designers and coders alike have contributed to the beauty of the web; we can always push it further.";
+}
+
+#zen-participation {
+	margin: 100px 15% 0px 15%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 2fr;
+	grid-template-rows: auto auto;
+	grid-column-gap: 20px;
+	grid-template-areas: 
+		"heading heading"
+		"text-left text-right";
+	justify-items: stretch;
+}
+
+#zen-participation > h3 {
+	grid-area: heading;
+}
+#zen-participation > p:nth-of-type(1) {
+	grid-area: text-left;
+}
+#zen-participation > p:nth-of-type(2) {
+	display: none;
+}
+#zen-participation > p:nth-of-type(3) {
+	grid-area: text-right;
+}
+#zen-participation > p:nth-of-type(1)::after {
+	padding-top: 10px;
+	display: block;
+	content: "CSS allows complete and total control over the style of a hypertext document. The only way this can be illustrated in a way that gets people excited is by demonstrating what it can truly be, once the reins are placed in the hands of those able to create beauty from structure. Designers and coders alike have contributed to the beauty of the web; we can always push it further.";
+}
+
+
+#zen-benefits {
+	margin: 0px 15%;
+	margin-top: -50px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas: 
+		". . . heading"
+		". . . text";
+	grid-column-gap: 20px;	
+}
+#zen-benefits > h3 {
+	grid-area: heading;
+}
+#zen-benefits > p {
+	grid-area: text;
+}
+
+
+
+#zen-requirements {
+	margin: -50px 15% 150px 15%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto auto;
+	grid-column-gap: 20px;
+	grid-template-areas: 
+		"heading heading heading heading"
+		"text-left text-right . text-end";
+	justify-items: stretch;
+}
+
+#zen-requirements > h3 {
+	grid-area: heading;
+}
+#zen-requirements > p:nth-of-type(1) {
+	grid-area: text-left;
+}
+#zen-requirements > p:nth-of-type(1)::after {
+	padding-top: 10px;
+	display: block;
+	content: "Luckily, designing this way shows how well various browsers have implemented CSS by now. When sticking to the guidelines you should see fairly consistent results across most modern browsers. Due to the sheer number of user agents on the web these days — especially when you factor in mobile — pixel-perfect layouts may not be possible across every platform. That’s okay, but do test in as many as you can. Your design should work in at least IE9+ and the latest Chrome, Firefox, iOS and Android browsers (run by over 90% of the population).";
+}
+#zen-requirements > p:nth-of-type(3) {
+	grid-area: text-right;
+}
+#zen-requirements > p:nth-of-type(3)::after {
+	padding-top: 10px;
+	display: block;
+	content: "This is a learning exercise as well as a demonstration. You retain full copyright on your graphics (with limited exceptions, see submission guidelines), but we ask you release your CSS under a Creative Commons license identical to the one on this site so that others may learn from your work.";
+}
+#zen-requirements > p:nth-of-type(2) {
+	display: none;
+}
+#zen-requirements > p:nth-of-type(4) {
+	display: none;
+}
+
+#zen-requirements > p:nth-of-type(5) {
+	grid-area: text-end;
+	align-self: end;
+}
+
 
 p { 
 	margin-top: 10px; 
@@ -154,10 +393,7 @@ header h2 {
 header {
 	padding-top: 20px;
 }
-.supporting {	
-	padding-left: 10px; 
-	margin-bottom: 40px;
-	}
+
 
 footer { 
 	text-align: center; 
@@ -235,123 +471,7 @@ footer a:link, footer a:visited {
 	color: #B3AE94;
 	}
 */
-.page-wrapper { 
-	background: none;
-	margin: 0; 
-/*	position: relative;*/
-	grid-area: page-wrapper;
-}
 
-#zen-intro {
-	display: grid;
-	height: 100%;
-	grid-template-columns: 25% 25% 25% 25%;
-	grid-template-rows: 200px 500px 400px;
-	grid-template-areas: 
-		"title title title demonstration"
-		"image image image ."
-		". . enlightenment-one enlightenment-one";
-	padding-top: 40px;
-	padding-bottom: 100px;
-}
-
-#zen-intro > header {
-	grid-area: title;
-	padding-top: 0px;
-}
-#zen-intro > header > h1 {
-	font-family: 'Roboto Mono', monospace;
-	font-size: 24px;
-	font-weight: 400;
-	line-height: 32px;
-	margin: 0px;
-	padding: 0px;
-	color: black;
-}
-#zen-intro > header > h2 {
-	font-family: 'PT Serif', serif;
-	font-size: 64px;
-	font-weight: 700;
-	line-height: 71px;
-	margin: 0px;
-	padding: 0px;
-	color: black;
-	width: 70%;
-}
-#zen-summary {
-	grid-area: demonstration;
-	padding-top: 40px;;
-}
-#zen-preamble {
-	grid-area: enlightenment-one;
-	display: grid;
-	grid-template-columns: 50% 50%;
-	grid-template-rows: 100px auto;
-	grid-column-gap: 20px;
-	grid-template-areas: 
-		"heading heading"
-		"text-left text-right"
-		"text-left text-right";
-	justify-items: stretch;
-}
-#zen-preamble > h3 {
-	margin-top: 0px;
-	grid-area: heading;
-}
-
-#zen-intro > header::after {
-	content: "";
-	display: block;
-	height: 600px;
-	width 100%;
-	overflow: visible;
-	background: url("https://cdn.dribbble.com/users/89889/screenshots/3111879/wetransfer-dribbble.jpg");
-}
-
-#zen-preamble > p {
-	grid-area: text-left;
-}
-#zen-preamble > p:nth-of-type(2) {
-	display: none;
-}
-#zen-preamble > p::after {
-	content: "We must clear the mind of the past. Web enlightenment has been achieved thanks to the tireless efforts of folk like the W3C, WaSP, and the major browser creators.";
-	display: block;
-	padding-top: 10px;
-}
-#zen-preamble > p:last-of-type {
-	grid-area: text-right;
-}
-#zen-preamble > p:last-of-type:after {
-	display: none;
-}
-
-#zen-explanation {
-	padding: 160px 0px 120px 0px;
-	display: grid;
-	grid-template-columns: 50% 60%;
-	grid-template-areas: "heading text-right";
-	background-color: #0D0022;
-	color: white;
-}
-#zen-explanation > h3 {
-	grid-area: heading;
-	margin-top: 0px;
-	width: 50%;
-	color: white;
-}
-#zen-explanation > p {
-	grid-area: text-right;
-	margin-top: 20px;
-}
-#zen-explanation > p:nth-of-type(2) {
-	display: none;
-}
-#zen-explanation > p::after {
-	padding-top: 10px;
-	display: block;
-	content: "CSS allows complete and total control over the style of a hypertext document. The only way this can be illustrated in a way that gets people excited is by demonstrating what it can truly be, once the reins are placed in the hands of those able to create beauty from structure. Designers and coders alike have contributed to the beauty of the web; we can always push it further.";
-}
 
 
 
